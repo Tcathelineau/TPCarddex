@@ -336,7 +336,7 @@ export function AddProductModal({ onClose, onAdd, toast }) {
                 (step === 1 && !selectedSet) ||
                 (step === 2 && !selectedType)
               }
-              className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed"
+              className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed px-5 py-2.5 rounded-lg"
             >
               Suivant →
             </button>
@@ -344,7 +344,7 @@ export function AddProductModal({ onClose, onAdd, toast }) {
             <button
               onClick={handleSubmit}
               disabled={submitting}
-              className="btn-primary disabled:opacity-60"
+              className="btn-primary disabled:opacity-60 px-5 py-2.5 rounded-lg flex items-center gap-2"
             >
               {submitting ? (
                 <>
@@ -353,7 +353,12 @@ export function AddProductModal({ onClose, onAdd, toast }) {
                   </svg>
                   Ajout en cours...
                 </>
-              ) : '✓ Ajouter à la collection'}
+              ) : (
+                <>
+                  <span className="text-lg">✅</span>
+                  <span>Ajouter à la collection</span>
+                </>
+              )}
             </button>
           )}
         </div>
